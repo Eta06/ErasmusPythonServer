@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Erasmus Server</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-screen {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+h1 {
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+input[type="text"]::placeholder {
+    opacity: 1;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+input[type="text"]:focus::placeholder {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.submit-button:hover {
+    animation: buttonPulse 0.5s infinite alternate;
+}
+
+@keyframes buttonPulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+
+
+    </style>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <div class="main-screen">
+        <h1>Erasmus Server</h1>
+        <form action="/" method="post">
+            <input type="text" name="name" placeholder="Name">
+        <input type="text" name="surname" placeholder="Surname">
+        <button class="submit-button">Submit</button>
+        </form>
+
+    </div>
+<script>
+
+    console.log("{{ message }}");
+    if ("{{ message }}" === "") {
+        console.log("No message");
+    } else {
+        Swal.fire({
+            title: 'Error',
+            text: "{{ message }}",
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    }
+</script>
+
+</body>
+</html>

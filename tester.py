@@ -4,7 +4,7 @@ import json
 
 def test_new():
     url = "http://localhost:4354/new"
-    data = {"name": "John", "surname": "Doe", "age": 25}
+    data = {"name": "Emir", "surname": "Doe", "age": 25}
     response = requests.post(url, params={"data": json.dumps(data)})
     print(response.json())
     return response.json()['id']

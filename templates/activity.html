@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erasmus - Activities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #336699;
+            padding: 15px 0;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            letter-spacing: 2px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .main-screen {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            opacity: 0; /* For the fade-in animation */
+            animation: fadeIn 0.5s ease-in forwards;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #336699;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .activity-screen{
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            opacity: 0; /* For the fade-in animation */
+            animation: fadeIn 0.5s ease-in forwards;
+            margin-bottom: 20px;
+        }
+        .activities{
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="main-screen">
+        <h1>Hello, {{ username }}</h1>
+    </div>
+     <nav>
+        <ul>
+            <li><a href="/">Profile</a></li>
+            <li><a href="/stream">Stream</a></li>
+            <li><a href="/activity">Activity</a></li>
+        </ul>
+    </nav>
+
+    <div class="activity-screen">
+        <h1>Activities</h1>
+        {% for activity in activities %}
+            <div class="activities">
+                <p>{{ activity }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>
